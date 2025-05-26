@@ -1,0 +1,63 @@
+"""
+Example experiment configuration for Agent Tuning Optimization Framework
+
+This configuration file defines parameters for running an experiment with the framework.
+"""
+
+{
+  "name": "agent_tuning_experiment",
+  "description": "Experiment to evaluate the effectiveness of negative and synthetic samples in agent tuning",
+  
+  "llm": {
+    "model_name": "gpt2",
+    "model_type": "causal",
+    "device": "cpu",
+    "max_length": 512,
+    "temperature": 0.7
+  },
+  
+  "dataset": {
+    "name": "agent_tuning_dataset",
+    "num_trajectories": 20
+  },
+  
+  "negative_samples": {
+    "enabled": true,
+    "method": "response_degradation",
+    "params": {
+      "degradation_level": 0.6
+    }
+  },
+  
+  "synthetic_trajectories": {
+    "enabled": true,
+    "method": "template",
+    "params": {
+      "num_interactions": 3
+    }
+  },
+  
+  "tuning": {
+    "method": "supervised",
+    "params": {
+      "num_train_epochs": 3,
+      "learning_rate": 5e-5,
+      "batch_size": 4,
+      "gradient_accumulation_steps": 4,
+      "positive_weight": 0.8
+    }
+  },
+  
+  "evaluation": {
+    "method": "quality",
+    "params": {
+      "num_samples": 10
+    },
+    "comparative": {
+      "enabled": true,
+      "params": {
+        "num_samples": 5
+      }
+    }
+  }
+}
