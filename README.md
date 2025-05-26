@@ -120,13 +120,3 @@ This project aims to develop a framework for efficiently tuning large language m
 - Guidelines for optimal mixing of positive, negative, and synthetic examples.
 - Evaluation results comparing different tuning approaches.
 
-## Alignment with MBZUAI Research
-This project builds on MBZUAI's research on "NAT: Enhancing Agent Tuning with Negative Samples" by Renxi Wang, Xudong Han, Yixuan Zhang, Timothy Baldwin, and Haonan Li. Key extensions include:
-
-- Adding synthetic trajectory generation to complement negative samples.
-- Implementing parameter-efficient fine-tuning methods for improved efficiency.
-- Developing comprehensive evaluation metrics for agent performance.
-- Creating visualization tools for training process analysis.
-
-By addressing the computational challenges of deploying LLMs as specialized agents, this project contributes to MBZUAI's focus on efficient and effective LLM adaptation.
-
